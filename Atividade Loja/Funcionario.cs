@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
+   
     public class Funcionario
     {
+        public double salario { get; set; }
+    
+        List<Funcionario> funcionarios = new List<Funcionario>();
+
         public void IniciarMenuFuncionario()
         {
             //erro aqui abaixo por conta da falta de ação dentro do menu funcionário.
@@ -23,6 +28,28 @@ namespace Atividade_Loja
         {
             Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Verificar Salário." + "\n2 - Carga Horária." + "\n3 - Histórico de Vendas." + "");
         }
+        public void listarfuncionarios() 
+        {
+            foreach (Funcionario fun in funcionarios) 
+            {
+                Console.WriteLine($"Funcionario: {fun.funcionarios}");
+            }
+        }
+        public void calcularbonificacao(double bonificacao)
+        {
+            bonificacao = salario + (salario * 0.25);
+        }
+
+        public void adicionarfuncionario()
+        {
+            listarfuncionarios();
+        }
+
+        private void EditarFuncionario()
+        {
+            throw new NotImplementedException();
+        }
+
         private int SolicitarAcaoUsuario()
         {
             int acao = -1;
@@ -40,23 +67,31 @@ namespace Atividade_Loja
         }
         private void RealizarAcaoSelecionada(int acaoSelecionada)
         {
-            //switch (acaoSelecionada)
-            //{
-            //    case 1:
-            //        Gerenciador.ListarFuncionarios();
-            //        Console.WriteLine("\n\n");
-            //        break;
+            switch (acaoSelecionada)
+            {
+                case 1:
+                    gerenciador.listarfuncionarios();
+                    console.writeline("\n\n");
+                    break;
 
-            //    case 2:
-            //        CalcularBonificacao();
-            //        Console.WriteLine("\n\n");
-            //        break;
+                case 2:
+                    calcularbonificacao();
+                    console.writeline("\n\n");
+                    break;
 
-            //    case 3:
-            //        AdicionarFuncionario();
-            //        Console.WriteLine("\n\n");
-            //        break;
-            //}
+                case 3:
+                    adicionarfuncionario();
+                    console.writeline("\n\n");
+                    break;
+
+                case 4:
+                    listarfuncionarios();
+                    EditarFuncionario();
+
+
+            }
         }
+
+        
     }
 }

@@ -21,7 +21,7 @@ namespace Atividade_Loja
         }
         public void ExibirMenuFuncionario()
         {
-            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Verificar Salário." + "\n2 - Carga Horária." + "\n3 - Histórico de Vendas." + "");
+            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Listar Funcionário." + "\n2 - Adicionar Funcionário." + "\n3 - Remover Funcionário." + "\n4 - Editar Funcionário." + "\n5 - Verificar Salário." + "\n6 - Carga Horária." + "\n7 - Histórico de Vendas." + "");
         }
         private int SolicitarAcaoUsuario()
         {
@@ -43,17 +43,37 @@ namespace Atividade_Loja
             //switch (acaoSelecionada)
             //{
             //    case 1:
-            //        Gerenciador.ListarFuncionarios();
+            //        ListarFuncionarios();
             //        Console.WriteLine("\n\n");
             //        break;
 
             //    case 2:
-            //        CalcularBonificacao();
+            //        AdicionarFuncionário();
             //        Console.WriteLine("\n\n");
             //        break;
 
             //    case 3:
-            //        AdicionarFuncionario();
+            //        RemoverFuncionario();
+            //        Console.WriteLine("\n\n");
+            //        break;
+
+            //    case 4:
+            //        EditarFuncionario();
+            //        Console.WriteLine("\n\n");
+            //        break;
+
+            //    case 5:
+            //        VerificarSalario();
+            //        Console.WriteLine("\n\n");
+            //        break;
+            
+            //    case 6:
+            //        CargaHoraria();
+            //        Console.WriteLine("\n\n");
+            //        break;
+            
+            //    case 7:
+            //        HistoricoVenda();
             //        Console.WriteLine("\n\n");
             //        break;
             //}

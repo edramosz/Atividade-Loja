@@ -35,8 +35,7 @@ namespace Atividade_Loja
                 Console.WriteLine($"Funcionario: {fun.funcionarios}");
             }
         }
-        public void calcularbonificacao(double bonificacao)
-        {
+        public void calcularbonificacao()
             bonificacao = salario + (salario * 0.25);
         }
 

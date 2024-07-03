@@ -8,7 +8,13 @@ namespace Atividade_Loja
 {
     public class Sistema
     {
+        private Cliente Clientes { get; set; }
         private Funcionario Funcionarios { get; set; }
+        public Sistema() 
+        { 
+            Clientes = new Cliente();
+            Funcionarios = new Funcionario();
+        }
         public void IniciarSistema()
         {
             int acaoSelecionada = -1;
@@ -42,14 +48,14 @@ namespace Atividade_Loja
         {
             switch (acaoSelecionada)
             {
-                //    case 1:
-                //        Gerenciador.ListarFuncionarios();
-                //        Console.WriteLine("\n\n");
-                //        break;
+                case 1:
+                     Clientes.IniciarMenuCliente();
+                     Console.WriteLine("\n\n");
+                     break;
 
                 case 2:
                     Funcionarios.IniciarMenuFuncionario();
-                    //Console.WriteLine("\n\n");
+                    Console.WriteLine("\n\n");
                     break;
             }
         }

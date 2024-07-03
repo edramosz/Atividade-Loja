@@ -13,7 +13,7 @@ namespace Atividade_Loja
 
         public void ListarProduto() 
         {
-            //foreach(Produto )
+            foreach( produto Pr in produtos)
         }
     }
 }

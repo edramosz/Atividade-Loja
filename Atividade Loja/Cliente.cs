@@ -21,7 +21,7 @@ namespace Atividade_Loja
         }
         public void ExibirMenuCliente()
         {
-            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Histórico de Compras." + "");
+            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Listar Clientes"  + "\n2 - Adicionar Cliente" + "\n3 - Remover Cliente" + "\n4 - Editar" + "\n5 - Ver Produtos" + "\n6 - Histórico de Compras.");
         }
         private int SolicitarAcaoUsuario()
         {
@@ -40,23 +40,38 @@ namespace Atividade_Loja
         }
         private void RealizarAcaoSelecionada(int acaoSelecionada)
         {
-            //switch (acaoSelecionada)
-            //{
-            //    case 1:
-            //        Gerenciador.ListarFuncionarios();
-            //        Console.WriteLine("\n\n");
-            //        break;
+            switch (acaoSelecionada)
+            {
+                case 1:
+                    ListarClientes();
+                    Console.WriteLine("\n\n");
+                    break;
 
-            //    case 2:
-            //        CalcularBonificacao();
-            //        Console.WriteLine("\n\n");
-            //        break;
+               case 2:
+                    AdicionarClientes();
+                    Console.WriteLine("\n\n");
+                    break;
 
-            //    case 3:
-            //        AdicionarFuncionario();
-            //        Console.WriteLine("\n\n");
-            //        break;
-            //}
+                case 3:
+                    RemoverCliente();
+                    Console.WriteLine("\n\n");
+                    break;
+
+                case 4:
+                    Editar();
+                    Console.WriteLine("\n\n");
+                    break;
+
+                case 5:
+                    VerProdutos();
+                    Console.WriteLine("\n\n");
+                    break;
+
+                case 6:
+                    HistoricoCompra();
+                    Console.WriteLine("\n\n");
+                    break;
+            }
         }
     }
 }

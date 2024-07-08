@@ -24,6 +24,36 @@ namespace Atividade_Loja
                 RealizarAcaoSelecionada(acaoSelecionada);
             }
         }
+        private int SolicitarAcaoUsuario()
+        {
+            int acao = -1;
+            while (acao < 0 || acao > 2)
+            {
+                Console.WriteLine("Digite a ação que você deseja realizar.");
+                acao = int.Parse(Console.ReadLine());
+
+                if (acao > 2 || acao < 0)
+                {
+                    Console.WriteLine("Número inválido!!\nFavor digite um número válido.");
+                }
+            }
+            return acao;
+        }
+        private void RealizarAcaoSelecionada(int acaoSelecionada)
+        {
+            switch (acaoSelecionada)
+            {
+                case 1:
+                    Clientes.IniciarMenuCliente();
+                    Console.WriteLine("\n\n");
+                    break;
+
+                case 2:
+                    Funcionarios.IniciarMenuFuncionario();
+                    Console.WriteLine("\n\n");
+                    break;
+            }
+        }
         public void ExibirMenuFuncionario()
         {
             Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Verificar Salário." + "\n2 - Carga Horária." + "\n3 - Histórico de Vendas." + "");

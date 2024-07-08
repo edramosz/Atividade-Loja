@@ -56,7 +56,7 @@ namespace Atividade_Loja
         }
         public void ExibirMenuFuncionario()
         {
-            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Verificar Salário." + "\n2 - Carga Horária." + "\n3 - Histórico de Vendas." + "");
+            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Listar Funcionário." + "\n2 - Adicionar Funcionário." + "\n3 - Remover Funcionário." + "\n4 - Editar Funcionário." + "\n5 - Verificar Salário." + "\n6 - Carga Horária." + "\n7 - Histórico de Vendas." + "");
         }
         public void listarfuncionarios() 
         {
@@ -96,29 +96,43 @@ namespace Atividade_Loja
         }
         private void RealizarAcaoSelecionada(int acaoSelecionada)
         {
-            switch (acaoSelecionada)
-            {
-                case 1:
-                    gerenciador.listarfuncionarios();
-                    console.writeline("\n\n");
-                    break;
+            //switch (acaoSelecionada)
+            //{
+            //    case 1:
+            //        ListarFuncionarios();
+            //        Console.WriteLine("\n\n");
+            //        break;
 
-                case 2:
-                    calcularbonificacao();
-                    console.writeline("\n\n");
-                    break;
+            //    case 2:
+            //        AdicionarFuncionário();
+            //        Console.WriteLine("\n\n");
+            //        break;
 
-                case 3:
-                    adicionarfuncionario();
-                    console.writeline("\n\n");
-                    break;
+            //    case 3:
+            //        RemoverFuncionario();
+            //        Console.WriteLine("\n\n");
+            //        break;
 
-                case 4:
-                    listarfuncionarios();
-                    EditarFuncionario();
+            //    case 4:
+            //        EditarFuncionario();
+            //        Console.WriteLine("\n\n");
+            //        break;
 
-
-            }
+            //    case 5:
+            //        VerificarSalario();
+            //        Console.WriteLine("\n\n");
+            //        break;
+            
+            //    case 6:
+            //        CargaHoraria();
+            //        Console.WriteLine("\n\n");
+            //        break;
+            
+            //    case 7:
+            //        HistoricoVenda();
+            //        Console.WriteLine("\n\n");
+            //        break;
+            //}
         }
 
         

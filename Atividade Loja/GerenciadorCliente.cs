@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
-    internal class GerenciadorCliente
+    public class GerenciadorCliente
     {
+        public void ListarClientes()
+        {
+
+        }
+        public void AdicionarCliente()
+        {
+
+        }
+        public void RemoverCliente()
+        {
+
+        }
+        public void EditarCliente()
+        {
+
+        }
+        public void MostrarProdutos()
+        {
+
+        }
+        public void HistoricoCompra()
+        {
+
+        }
     }
 }

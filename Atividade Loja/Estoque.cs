@@ -8,6 +8,10 @@ namespace Atividade_Loja
 {
     public class Estoque
     {
-        public int QuantidadeProduto { get; set; }
+    //    public int QuantidadeProduto { get; set; }
+    //    List<Produto> Produtos { get; set; } = new List<Produto>();
+
+
+        
     } 
 }

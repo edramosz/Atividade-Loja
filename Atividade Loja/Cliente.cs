@@ -38,6 +38,7 @@ namespace Atividade_Loja
             }
             return acao;
         }
+      
         private void RealizarAcaoSelecionada(int acaoSelecionada)
         {
             switch (acaoSelecionada)
@@ -73,5 +74,7 @@ namespace Atividade_Loja
                     break;
             }
         }
+
+        
     }
 }

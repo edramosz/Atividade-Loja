@@ -10,10 +10,12 @@ namespace Atividade_Loja
     {
         private Cliente Clientes { get; set; }
         private Funcionario Funcionarios { get; set; }
+        private GerenciadorCliente GerCliente { get; set; }
         public Sistema() 
         { 
             Clientes = new Cliente();
             Funcionarios = new Funcionario();
+            GerCliente = new GerenciadorCliente();
         }
         public void IniciarSistema()
         {

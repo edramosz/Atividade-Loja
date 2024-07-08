@@ -8,5 +8,6 @@ namespace Atividade_Loja
 {
     public class Estoque
     {
-    }
+        public int QuantidadeProduto { get; set; }
+    } 
 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\pasta edson\\Trabalho Loja Paulo\\Atividade Loja\\Atividade Loja\\Atividade Loja.csproj",
+      "projectUniqueName": "C:\\Users\\Alunos\\Documents\\GitHub\\Atividade-Loja\\Atividade Loja\\Atividade Loja.csproj",
       "projectName": "Atividade Loja",
-      "projectPath": "C:\\pasta edson\\Trabalho Loja Paulo\\Atividade Loja\\Atividade Loja\\Atividade Loja.csproj",
+      "projectPath": "C:\\Users\\Alunos\\Documents\\GitHub\\Atividade-Loja\\Atividade Loja\\Atividade Loja.csproj",
       "packagesPath": "C:\\Users\\Alunos\\.nuget\\packages\\",
-      "outputPath": "C:\\pasta edson\\Trabalho Loja Paulo\\Atividade Loja\\Atividade Loja\\obj\\",
+      "outputPath": "C:\\Users\\Alunos\\Documents\\GitHub\\Atividade-Loja\\Atividade Loja\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alunos\\AppData\\Roaming\\NuGet\\NuGet.Config",

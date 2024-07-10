@@ -10,7 +10,7 @@ namespace Atividade_Loja
     {
         public void ListarClientes()
         {
-
+            
         }
         public void AdicionarCliente()
         {

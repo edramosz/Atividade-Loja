@@ -8,9 +8,14 @@ namespace Atividade_Loja
 {
     public class Estoque
     {
-    //    public int QuantidadeProduto { get; set; }
-    //    List<Produto> Produtos { get; set; } = new List<Produto>();
+    
+       List<ProdutoFisico> ProdutosF { get; set; } = new List<ProdutoFisico>();
+        List<ProdutoDigital> ProdutosD { get; set; } = new List<ProdutoDigital>();
 
+        public void InicializarDados()
+        {
+            ProdutosF.Add(new ProdutoFisico(1,"arroz",17.20, 52)); 
+        }
 
         
     } 

@@ -10,6 +10,7 @@ namespace Atividade_Loja
     public class Funcionario
     {
        
+        
 
         public void IniciarMenuFuncionario()
         {
@@ -41,15 +42,16 @@ namespace Atividade_Loja
         public void ExibirMenuFuncionario()
         {
             Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Listar Funcionário." + "\n2 - Adicionar Funcionário." + "\n3 - Remover Funcionário." + "\n4 - Editar Funcionário." + "\n5 - Verificar Salário." + "\n6 - Carga Horária." + "\n7 - Histórico de Vendas." + "");
+            
         }
         private void RealizarAcaoSelecionada(int acaoSelecionada)
         {
-           // switch (acaoSelecionada)
-            //{
-            //    case 1:
-            //        ListarFuncionarios();
-            //        Console.WriteLine("\n\n");
-            //        break;
+            switch (acaoSelecionada)
+            {
+               case 1:
+                    ListarFuncionarios();
+                    Console.WriteLine("\n\n");
+                    break;
 
             //    case 2:
             //        AdicionarFuncionário();
@@ -80,7 +82,7 @@ namespace Atividade_Loja
             //        HistoricoVenda();
             //        Console.WriteLine("\n\n");
             //        break;
-            //}
+            }
         }
 
 

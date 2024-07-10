@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
-    internal class Gerente
+    internal class Caixa
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -14,7 +14,7 @@ namespace Atividade_Loja
         private double Salario { get; set; }
         private double BonusAnual { get; set; }
 
-        public Gerente(int id, string nome, int idade, double salario)
+        public Caixa(int id, string nome, int idade, double salario)
         {
             Id = id;
             Nome = nome;
@@ -22,7 +22,6 @@ namespace Atividade_Loja
             Salario = salario;
             BonusAnual = (Salario * 0.3);
         }
-
         private void AplicarBonificaçãoAnual()
         {
             Console.WriteLine("Sua bonificação será: " + BonusAnual);
@@ -57,6 +56,5 @@ namespace Atividade_Loja
         {
             Salario = Salario + (Salario * 0.1);
         }
-
     }
 }

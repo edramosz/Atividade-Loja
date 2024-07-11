@@ -15,17 +15,16 @@ namespace Atividade_Loja
         public double Preço { get; set; }
         public int Qtnd { get; set; }
         public int TipoProduto { get; set; }
+        public Estoque()
+        {
+            InicializarDadosDigital();
+            InicializarDadosFisico();
+        }
         public void InicializarDadosFisico()
         {
             ProdutosF.Add(new ProdutoFisico(1, "Jogo Payfire Mídia Físico", 17.20, 52));
             ProdutosF.Add(new ProdutoFisico(1, "Blusa", 17.20, 52));
             ProdutosF.Add(new ProdutoFisico(1, "Jogo God of War Mídia Físico", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(1, "", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(1, "", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(1, "", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(1, "", 17.20, 52));
-
-
         }
         public void InicializarDadosDigital()
         {
@@ -56,6 +55,15 @@ namespace Atividade_Loja
                 case 1:
                     ProdutosF.Add(new ProdutoFisico(ID,Nome,Preço,Qtnd));
                     break;
+            }
+        }
+
+        public void ListarProdutosF()
+        {
+            Console.WriteLine("----------PRODUTOS FÍSICOS----------");
+            foreach(ProdutoFisico pf in ProdutosF)
+            {
+                Console.WriteLine($"{pf.Nome} {pf.Qtnd} ---  {pf.Preço}");
             }
         }
 

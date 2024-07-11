@@ -10,9 +10,6 @@ namespace Atividade_Loja
     {
         public Estoque Estq { get; set; }
         public int Id { get; set; }
-        public void IdAutomatico()
-        {
-            
-        }
+        
     }
 }

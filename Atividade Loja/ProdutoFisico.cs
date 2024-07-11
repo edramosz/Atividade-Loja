@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
-    public class ProdutoFisico : Estoque
+    public class ProdutoFisico : Produto
     {
         public ProdutoFisico(int id, string nome, double preço, int qtnd)
         {

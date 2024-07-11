@@ -10,10 +10,6 @@ namespace Atividade_Loja
     {
         List<ProdutoFisico> ProdutosF { get; set; } = new List<ProdutoFisico>();
         List<ProdutoDigital> ProdutosD { get; set; } = new List<ProdutoDigital>();
-        public int ID { get; set; }
-        public string Nome { get; set; }
-        public double Preço { get; set; }
-        public int Qtnd { get; set; }
         public int TipoProduto { get; set; }
         public Estoque()
         {
@@ -23,8 +19,8 @@ namespace Atividade_Loja
         public void InicializarDadosFisico()
         {
             ProdutosF.Add(new ProdutoFisico(1, "Jogo Payfire Mídia Físico", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(1, "Blusa", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(1, "Jogo God of War Mídia Físico", 17.20, 52));
+            ProdutosF.Add(new ProdutoFisico(2, "Blusa", 17.20, 52));
+            ProdutosF.Add(new ProdutoFisico(3, "Jogo God of War Mídia Físico", 17.20, 52));
         }
         public void InicializarDadosDigital()
         {
@@ -36,35 +32,69 @@ namespace Atividade_Loja
             ProdutosD.Add(new ProdutoDigital(6, "", 17.20, 52));
             ProdutosD.Add(new ProdutoDigital(7, "", 17.20, 52));
         }
-        public void PegaDado()
+        public void AdicionarProdutos(ProdutoFisico pf, ProdutoDigital pd)
         {
             Console.WriteLine("Qual o tipo do produto?\n1 - Produto Físico\n2 - Produto Digital");
             TipoProduto = int.Parse(Console.ReadLine());
-            Console.WriteLine("Diga o nome do produto.");
-            Nome = Console.ReadLine();
-            Console.WriteLine("Diga o preço do produto.");
-            Preço = double.Parse(Console.ReadLine());
-            Console.WriteLine("Diga a quantidade em estoque desse produto.");
-            Qtnd = int.Parse(Console.ReadLine());
-        }
-        public void AdicionarProdutos()
-        {
-            PegaDado();
-            switch (TipoProduto)
+            if(TipoProduto == 1)
             {
-                case 1:
-                    ProdutosF.Add(new ProdutoFisico(ID,Nome,Preço,Qtnd));
-                    break;
-            }
-        }
+                pf.ID = IdAutomaticoF();
+                Console.WriteLine("Diga o nome do produto.");
+                pf.Nome = Console.ReadLine();
+                Console.WriteLine("Diga o preço do produto.");
+                pf.Preço = double.Parse(Console.ReadLine());
+                Console.WriteLine("Diga a quantidade em estoque desse produto.");
+                pf.Qtnd = int.Parse(Console.ReadLine());
 
+                ProdutosF.Add(new ProdutoFisico(pf.ID, pf.Nome, pf.Preço, pf.Qtnd));
+            }
+            else if(TipoProduto == 2)
+            {
+                pd.ID = IdAutomaticoD();
+                Console.WriteLine("Diga o nome do produto.");
+                pd.Nome = Console.ReadLine();
+                Console.WriteLine("Diga o preço do produto.");
+                pd.Preço = double.Parse(Console.ReadLine());
+                Console.WriteLine("Diga a quantidade em estoque desse produto.");
+                pd.Qtnd = int.Parse(Console.ReadLine());
+
+                ProdutosD.Add(new ProdutoDigital(pd.ID, pd.Nome, pd.Preço, pd.Qtnd));
+            }
+            
+        }
         public void ListarProdutosF()
         {
             Console.WriteLine("----------PRODUTOS FÍSICOS----------");
             foreach(ProdutoFisico pf in ProdutosF)
             {
-                Console.WriteLine($"{pf.Nome} {pf.Qtnd} ---  {pf.Preço}");
+                Console.WriteLine($"{pf.ID} {pf.Nome} {pf.Qtnd} ---  ${pf.Preço}");
             }
+        }
+        public void ListarProdutosD()
+        {
+            Console.WriteLine("----------PRODUTOS DIGITAIS----------");
+            foreach (ProdutoDigital pd in ProdutosD)
+            {
+                Console.WriteLine($"{pd.ID} {pd.Nome} {pd.Qtnd} ---  ${pd.Preço}");
+            }
+        }
+        public int IdAutomaticoF()
+        {
+            int id = 0;
+            foreach(ProdutoFisico pf in ProdutosF)
+            {
+                id = pf.ID;       
+            }
+            return id;
+        }
+        public int IdAutomaticoD()
+        {
+            int id = 0;
+            foreach (ProdutoDigital pd in ProdutosD)
+            {
+                id = pd.ID;
+            }
+            return id;
         }
 
     } 

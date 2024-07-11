@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
-    public class ProdutoDigital : Estoque
+    public class ProdutoDigital : Produto
     {
         public ProdutoDigital(int id, string nome, double preço, int qtnd)
         {

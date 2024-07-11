@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
-    public class ProdutoDigital
+    public class ProdutoDigital : Estoque
     {
-        public int ID { get; set; }
-        public string Nome { get; set; }
-        public double Preço { get; set; }
-        public int Qtnd { get; set; }
-        public ProdutoFisico(int id, string nome, double preço, int qtnd)
+        public ProdutoDigital(int id, string nome, double preço, int qtnd)
         {
             ID = id;
             Nome = nome;

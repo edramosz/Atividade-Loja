@@ -9,8 +9,13 @@ namespace Atividade_Loja
 
     public class Funcionario
     {
-       
-        
+        private GerenciadorFuncionario funcionarios { get; set; }
+
+        public Funcionario()
+        {
+           funcionarios = new GerenciadorFuncionario();
+        }
+
 
         public void IniciarMenuFuncionario()
         {
@@ -49,14 +54,14 @@ namespace Atividade_Loja
             switch (acaoSelecionada)
             {
                case 1:
-                    ListarFuncionarios();
+                    funcionarios.ListarFuncionarios();
                     Console.WriteLine("\n\n");
                     break;
 
-            //    case 2:
-            //        AdicionarFuncionário();
-            //        Console.WriteLine("\n\n");
-            //        break;
+                case 2:
+                    funcionarios.AdicionarFuncionario();
+                    Console.WriteLine("\n\n");
+                    break;
 
             //    case 3:
             //        RemoverFuncionario();

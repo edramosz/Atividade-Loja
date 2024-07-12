@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
-    internal class Gerente
+    public class Gerente
     {
         public int Id { get; set; }
         public string Nome { get; set; }

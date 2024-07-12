@@ -63,15 +63,15 @@ namespace Atividade_Loja
                     Console.WriteLine("\n\n");
                     break;
 
-            //    case 3:
-            //        RemoverFuncionario();
-            //        Console.WriteLine("\n\n");
-            //        break;
+                 case 3:
+                    funcionarios.RemoverFuncionario();
+                    Console.WriteLine("\n\n");
+                    break;
 
-            //    case 4:
-            //        EditarFuncionario();
-            //        Console.WriteLine("\n\n");
-            //        break;
+               case 4:
+                    funcionarios.EditarFuncionario();
+                    Console.WriteLine("\n\n");
+                    break;
 
             //    case 5:
             //        VerificarSalario();

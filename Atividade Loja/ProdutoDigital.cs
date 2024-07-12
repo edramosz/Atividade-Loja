@@ -10,7 +10,7 @@ namespace Atividade_Loja
     {
         public ProdutoDigital(int id, string nome, double preço, int qtnd)
         {
-            ID = id;
+            ID= id;
             Nome = nome;
             Preço = preço;
             Qtnd = qtnd;

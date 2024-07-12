@@ -18,9 +18,15 @@ namespace Atividade_Loja
         }
         public void InicializarDadosFisico()
         {
-            ProdutosF.Add(new ProdutoFisico(1, "Jogo Payfire Mídia Físico", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(2, "Blusa", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(3, "Jogo God of War Mídia Físico", 17.20, 52));
+            ProdutosF.Add(new ProdutoFisico(1, "Mouse Logitech G40", 149.65, 625));
+            ProdutosF.Add(new ProdutoFisico(2, "Monitor AOC 144hz", 755.69, 52));
+            ProdutosF.Add(new ProdutoFisico(3, "Teclado Redragon", 98.69, 90));
+            ProdutosF.Add(new ProdutoFisico(4, "Fonte de Alimentação 550W", 420.50, 63));
+            ProdutosF.Add(new ProdutoFisico(5, "Water Cooler ", 199.99, 260));
+            ProdutosF.Add(new ProdutoFisico(6, "", 309.20, 104));
+            ProdutosF.Add(new ProdutoFisico(7, "", 17.20, 52));
+            ProdutosF.Add(new ProdutoFisico(8, "", 17.20, 52));
+            ProdutosF.Add(new ProdutoFisico(9, "", 17.20, 52));
         }
         public void InicializarDadosDigital()
         {
@@ -32,35 +38,111 @@ namespace Atividade_Loja
             ProdutosD.Add(new ProdutoDigital(6, "", 17.20, 52));
             ProdutosD.Add(new ProdutoDigital(7, "", 17.20, 52));
         }
-        public void AdicionarProdutos(ProdutoFisico pf, ProdutoDigital pd)
+       
+
+        private Produto CriarProduto(int id)
         {
-            Console.WriteLine("Qual o tipo do produto?\n1 - Produto Físico\n2 - Produto Digital");
-            TipoProduto = int.Parse(Console.ReadLine());
-            if(TipoProduto == 1)
-            {
-                pf.ID = IdAutomaticoF();
-                Console.WriteLine("Diga o nome do produto.");
-                pf.Nome = Console.ReadLine();
-                Console.WriteLine("Diga o preço do produto.");
-                pf.Preço = double.Parse(Console.ReadLine());
-                Console.WriteLine("Diga a quantidade em estoque desse produto.");
-                pf.Qtnd = int.Parse(Console.ReadLine());
+            Produto produto = new Produto();
+            produto.ID = id;
+            Console.WriteLine("Diga o nome do produto.");
+            produto.Nome = Console.ReadLine();
+            Console.WriteLine("Diga o preço do produto.");
+            produto.Preço = double.Parse(Console.ReadLine());
+            Console.WriteLine("Diga a quantidade em estoque desse produto.");
+            produto.Qtnd = int.Parse(Console.ReadLine());
 
-                ProdutosF.Add(new ProdutoFisico(pf.ID, pf.Nome, pf.Preço, pf.Qtnd));
-            }
-            else if(TipoProduto == 2)
-            {
-                pd.ID = IdAutomaticoD();
-                Console.WriteLine("Diga o nome do produto.");
-                pd.Nome = Console.ReadLine();
-                Console.WriteLine("Diga o preço do produto.");
-                pd.Preço = double.Parse(Console.ReadLine());
-                Console.WriteLine("Diga a quantidade em estoque desse produto.");
-                pd.Qtnd = int.Parse(Console.ReadLine());
+            return produto;
+        }
 
-                ProdutosD.Add(new ProdutoDigital(pd.ID, pd.Nome, pd.Preço, pd.Qtnd));
+        public void AdicionarProdutoFisico()
+        {
+            int id = ProdutosF.Max(x => x.ID) + 1;
+            Produto produto = CriarProduto(id);
+            ProdutoFisico fisico = new ProdutoFisico(produto.ID, produto.Nome, produto.Preço, produto.Qtnd);
+            ProdutosF.Add(fisico);
+        }
+        public void AdicionarProdutoDigital()
+        {
+            int id = ProdutosD.Max(x => x.ID) + 1;
+
+            Produto produto = CriarProduto(id);
+            ProdutoDigital digital = new ProdutoDigital(produto.ID, produto.Nome, produto.Preço, produto.Qtnd);
+
+            ProdutosD.Add(digital);
+        }
+        public void ExcluirProdutoFisico(int id)
+        {
+            foreach (ProdutoFisico pf in ProdutosF)
+            {
+                if(pf.ID == id)
+                {
+                    ProdutosF.Remove(pf);
+                }
             }
-            
+        }
+        public void ExcluirProdutoDigital(int id)
+        {
+            foreach (ProdutoDigital pd in ProdutosD)
+            {
+                if (pd.ID == id)
+                {
+                    ProdutosD.Remove(pd);
+                }
+            }
+        }
+        public void EditarProdutoDigital(int id)
+        {
+            foreach (ProdutoDigital pd in ProdutosD)
+            {
+                if (pd.ID == id)
+                {
+                    Console.WriteLine("Qual campo você deseja alterar?");
+                    Console.WriteLine("1 - Nome\n2 - Preço\n3 - Quantidade");
+                    int resposta = int.Parse(Console.ReadLine());
+                    if(resposta == 1)
+                    {
+                        Console.WriteLine("Diga o novo valor.");
+                        pd.Nome = Console.ReadLine();
+                    }
+                    else if(resposta == 2)
+                    {
+                        Console.WriteLine("Diga o novo valor.");
+                        pd.Preço = double.Parse(Console.ReadLine());
+                    }
+                    else if(resposta == 3)
+                    {
+                        Console.WriteLine("Diga o novo valor.");
+                        pd.Qtnd = int.Parse(Console.ReadLine());
+                    }                   
+                }
+            }
+        }
+        public void EditarProdutoFisico(int id)
+        {
+            foreach (ProdutoFisico pf in ProdutosF)
+            {
+                if (pf.ID == id)
+                {
+                    Console.WriteLine("Qual campo você deseja alterar?");
+                    Console.WriteLine("1 - Nome\n2 - Preço\n3 - Quantidade");
+                    int resposta = int.Parse(Console.ReadLine());
+                    if (resposta == 1)
+                    {
+                        Console.WriteLine("Diga o novo valor.");
+                        pf.Nome = Console.ReadLine();
+                    }
+                    else if (resposta == 2)
+                    {
+                        Console.WriteLine("Diga o novo valor.");
+                        pf.Preço = double.Parse(Console.ReadLine());
+                    }
+                    else if (resposta == 3)
+                    {
+                        Console.WriteLine("Diga o novo valor.");
+                        pf.Qtnd = int.Parse(Console.ReadLine());
+                    }
+                }
+            }
         }
         public void ListarProdutosF()
         {
@@ -78,24 +160,7 @@ namespace Atividade_Loja
                 Console.WriteLine($"{pd.ID} {pd.Nome} {pd.Qtnd} ---  ${pd.Preço}");
             }
         }
-        public int IdAutomaticoF()
-        {
-            int id = 0;
-            foreach(ProdutoFisico pf in ProdutosF)
-            {
-                id = pf.ID;       
-            }
-            return id;
-        }
-        public int IdAutomaticoD()
-        {
-            int id = 0;
-            foreach (ProdutoDigital pd in ProdutosD)
-            {
-                id = pd.ID;
-            }
-            return id;
-        }
+
 
     } 
 }

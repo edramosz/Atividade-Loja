@@ -8,6 +8,7 @@ namespace Atividade_Loja
 {
     public class ProdutoDigital : Produto
     {
+        
         public ProdutoDigital(int id, string nome, double preço, int qtnd)
         {
             ID= id;

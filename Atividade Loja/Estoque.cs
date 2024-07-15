@@ -69,27 +69,44 @@ namespace Atividade_Loja
             ProdutoDigital digital = new ProdutoDigital(produto.ID, produto.Nome, produto.Preço, produto.Qtnd);
 
             ProdutosD.Add(digital);
-        }
-        public void ExcluirProdutoFisico(int id)
-        {
-            foreach (ProdutoFisico pf in ProdutosF)
-            {
-                if(pf.ID == id)
-                {
-                    ProdutosF.Remove(pf);
-                }
-            }
-        }
+        } 
         public void ExcluirProdutoDigital(int id)
+        {           
+            ProdutoDigital pd = BuscarProdutoDigitalPorID(id);
+            ProdutosD.Remove(pd);
+        }
+
+        private ProdutoDigital BuscarProdutoDigitalPorID(int id)
         {
             foreach (ProdutoDigital pd in ProdutosD)
             {
                 if (pd.ID == id)
                 {
-                    ProdutosD.Remove(pd);
+                    return pd;
                 }
             }
+
+            return null;
         }
+        public void ExcluirProdutoFisico(int id)
+        {
+            ProdutoFisico pd = BuscarProdutoFisicoPorID(id);
+            ProdutosF.Remove(pd);
+        }
+
+        private ProdutoFisico BuscarProdutoFisicoPorID(int id)
+        {
+            foreach (ProdutoFisico pd in ProdutosF)
+            {
+                if (pd.ID == id)
+                {
+                    return pd;
+                }
+            }
+
+            return null;
+        }
+
         public void EditarProdutoDigital(int id)
         {
             foreach (ProdutoDigital pd in ProdutosD)

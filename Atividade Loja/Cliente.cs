@@ -21,17 +21,17 @@ namespace Atividade_Loja
         }
         public void ExibirMenuCliente()
         {
-            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Listar Clientes"  + "\n2 - Adicionar Cliente" + "\n3 - Remover Cliente" + "\n4 - Editar" + "\n5 - Ver Produtos" + "\n6 - Histórico de Compras.");
+            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Listar Clientes"  + "\n2 - Adicionar Cliente" + "\n3 - Remover Cliente" + "\n4 - Editar Cliente" + "\n5 - Ver Produtos" + "\n6 - Histórico de Compras.");
         }
         private int SolicitarAcaoUsuario()
         {
             int acao = -1;
-            while (acao < 0 || acao > 3)
+            while (acao < 0 || acao > 6)
             {
                 Console.WriteLine("Digite a ação que você deseja realizar.");
                 acao = int.Parse(Console.ReadLine());
 
-                if (acao > 3 || acao < 0)
+                if (acao > 6 || acao < 0)
                 {
                     Console.WriteLine("Número inválido!!\nFavor digite um número válido.");
                 }
@@ -43,35 +43,35 @@ namespace Atividade_Loja
         {
             switch (acaoSelecionada)
             {
-                case 1:
-                    ListarClientes();
-                    Console.WriteLine("\n\n");
-                    break;
+               // case 1:
+               //     ListarClientes();
+               //     Console.WriteLine("\n\n");
+               //     break;
 
-               case 2:
-                    AdicionarClientes();
-                    Console.WriteLine("\n\n");
-                    break;
+               //case 2:
+               //     AdicionarClientes();
+               //     Console.WriteLine("\n\n");
+               //     break;
 
-                case 3:
-                    RemoverCliente();
-                    Console.WriteLine("\n\n");
-                    break;
+               // case 3:
+               //     RemoverCliente();
+               //     Console.WriteLine("\n\n");
+               //     break;
 
-                case 4:
-                    Editar();
-                    Console.WriteLine("\n\n");
-                    break;
+               // case 4:
+               //     Editar();
+               //     Console.WriteLine("\n\n");
+               //     break;
 
-                case 5:
-                    VerProdutos();
-                    Console.WriteLine("\n\n");
-                    break;
+               // case 5:
+               //     VerProdutos();
+               //     Console.WriteLine("\n\n");
+               //     break;
 
-                case 6:
-                    HistoricoCompra();
-                    Console.WriteLine("\n\n");
-                    break;
+               // case 6:
+               //     HistoricoCompra();
+               //     Console.WriteLine("\n\n");
+               //     break;
             }
         }
 

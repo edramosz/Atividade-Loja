@@ -13,3 +13,18 @@ C:\Users\Alunos\Documents\GitHub\Atividade-Loja\Atividade Loja\obj\Debug\net6.0\
 C:\Users\Alunos\Documents\GitHub\Atividade-Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.pdb
 C:\Users\Alunos\Documents\GitHub\Atividade-Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.genruntimeconfig.cache
 C:\Users\Alunos\Documents\GitHub\Atividade-Loja\Atividade Loja\obj\Debug\net6.0\ref\Atividade Loja.dll
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\bin\Debug\net6.0\Atividade Loja.exe
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\bin\Debug\net6.0\Atividade Loja.deps.json
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\bin\Debug\net6.0\Atividade Loja.runtimeconfig.json
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\bin\Debug\net6.0\Atividade Loja.dll
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\bin\Debug\net6.0\Atividade Loja.pdb
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.csproj.AssemblyReference.cache
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.GeneratedMSBuildEditorConfig.editorconfig
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.AssemblyInfoInputs.cache
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.AssemblyInfo.cs
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.csproj.CoreCompileInputs.cache
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.dll
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\refint\Atividade Loja.dll
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.pdb
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\Atividade Loja.genruntimeconfig.cache
+C:\pasta edson\Trabalho Loja Paulo\Atividade Loja\Atividade Loja\obj\Debug\net6.0\ref\Atividade Loja.dll

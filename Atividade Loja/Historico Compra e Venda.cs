@@ -8,5 +8,6 @@ namespace Atividade_Loja
 {
     public class Historico_Compra_e_Venda
     {
+
     }
 }

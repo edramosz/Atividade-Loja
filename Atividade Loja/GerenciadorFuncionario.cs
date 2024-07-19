@@ -9,12 +9,10 @@ namespace Atividade_Loja
     
     public class GerenciadorFuncionario
     {
-        private Funcionario funcionarios { get; set; }
         List<Gerente> gerentes = new List<Gerente>();
         List<Caixa> caixas = new List<Caixa>();
         public GerenciadorFuncionario()
         {
-          funcionarios = new Funcionario();
         caixas = new List<Caixa>();
             gerentes = new List<Gerente>();
             InicializarDados();
@@ -71,7 +69,7 @@ namespace Atividade_Loja
             Console.WriteLine("Qual id de funcionário você deseja remover");
             int IdFuncionario = int.Parse(Console.ReadLine());
 
-           RemoverFuncionarios(profissaoSelecionada, IdFuncionario);
+           //RemoverFuncionarios(profissaoSelecionada, IdFuncionario);
 
         }
         public void EditarFuncionario()

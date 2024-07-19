@@ -94,6 +94,7 @@ namespace Atividade_Loja
 
             editarFuncionario(profissaoSelecionada, IdFuncionario, campo, resposta);
         }
+<<<<<<< HEAD
         public void VerificarSalario()
         {
             Console.WriteLine("digite sua profissao para verificar salario");
@@ -119,6 +120,9 @@ namespace Atividade_Loja
             }
 
         }
+=======
+        public void VerificarSalario() { }
+>>>>>>> cea6144c9c4058b587f6406cc5d82296a3010bc7
         public void CargaHoraria() { }
         public void HistoricoDeVendas() { }
 
@@ -226,6 +230,7 @@ namespace Atividade_Loja
 
             return gerente;
         }
+<<<<<<< HEAD
         public void removerfuncionarios(int profissaoSelecionada, int IdFuncionario)
         {
             if (profissaoSelecionada == 1)
@@ -251,5 +256,33 @@ namespace Atividade_Loja
 
 
     }
+=======
+>>>>>>> cea6144c9c4058b587f6406cc5d82296a3010bc7
 
+        public void removerfuncionarios(int profissaoSelecionada, int IdFuncionario)
+        {
+            if (profissaoSelecionada == 1)
+            {
+                Gerente ger = BuscarGerentePorId(IdFuncionario);
+                RemoverGerente(ger);
+            }
+            else if (profissaoSelecionada == 2)
+            {
+                Caixa cax = BuscarCaixaPorId(IdFuncionario);
+                RemoverCaixa(cax);
+            }
+
+        }
+
+        public void RemoverGerente(Gerente gerente)
+        {
+            gerentes.Remove(gerente);
+        }
+
+        public void RemoverCaixa(Caixa caixa)
+        {
+            caixas.Remove(caixa);
+        }
+
+    }
 }

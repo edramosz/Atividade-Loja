@@ -8,15 +8,9 @@ namespace Atividade_Loja
 {
     public class Produto
     {
-        public int QuantidaDedeProdutos { get; set; }   
-        List<Produto> produtos = new List<Produto>();
-
-        public void ListarProduto() 
-        {
-            foreach(Produto Pr in produtos)
-            {
-
-            }
-        }
+        public int ID { get; set; }
+        public string Nome { get; set; }
+        public double Preço { get; set; }
+        public int Qtnd { get; set; }
     }
 }

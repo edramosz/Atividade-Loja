@@ -9,6 +9,8 @@ namespace Atividade_Loja
 
     public class Funcionario
     {
+    
+        List<Funcionario> funcionario = new List<Funcionario>();
         private GerenciadorFuncionario funcionarios { get; set; }
 
         public Funcionario()

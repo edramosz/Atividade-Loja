@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
-    
+
     public class GerenciadorFuncionario
     {
         private Funcionario funcionarios { get; set; }
         List<Gerente> gerentes = new List<Gerente>();
         List<Caixa> caixas = new List<Caixa>();
+        public Caixa fun { get; set; }
+        public Caixa funG { get; set; }
         public GerenciadorFuncionario()
         {
-          funcionarios = new Funcionario();
-        caixas = new List<Caixa>();
+            funcionarios = new Funcionario();
+            caixas = new List<Caixa>();
             gerentes = new List<Gerente>();
             InicializarDados();
         }
@@ -30,12 +32,12 @@ namespace Atividade_Loja
             gerentes.Add(new Gerente(3, "Pablo", 37, 10600));
         }
 
-        public void ListarFuncionarios() 
+        public void ListarFuncionarios()
         {
             ListaCaixa();
             ListaGerente();
         }
-        public void AdicionarFuncionario() 
+        public void AdicionarFuncionario()
         {
             Console.WriteLine("-----------------PROFISSÔES---------------------");
             Console.WriteLine("1 - Gerente");
@@ -57,13 +59,11 @@ namespace Atividade_Loja
                 Console.WriteLine("Erro \nInsira um numero valido");
             }
         }
-        public void RemoverFuncionario() 
+        public void RemoverFuncionario()
         {
             Console.WriteLine("---------------------PROFISSÕES---------------------");
             Console.WriteLine("1 - Gerente.");
             Console.WriteLine("2 - Caixa.");
-            Console.WriteLine("3 - Marketing.");
-            Console.WriteLine("4 - Desenvolvedor.");
             Console.WriteLine("Digite qual profissão deseja alterar.");
             int profissaoSelecionada = int.Parse(Console.ReadLine());
             ListarFuncionariosPorProfissao(profissaoSelecionada);
@@ -71,7 +71,7 @@ namespace Atividade_Loja
             Console.WriteLine("Qual id de funcionário você deseja remover");
             int IdFuncionario = int.Parse(Console.ReadLine());
 
-           RemoverFuncionarios(profissaoSelecionada, IdFuncionario);
+            removerfuncionarios(profissaoSelecionada, IdFuncionario);
 
         }
         public void EditarFuncionario()
@@ -94,8 +94,32 @@ namespace Atividade_Loja
 
             editarFuncionario(profissaoSelecionada, IdFuncionario, campo, resposta);
         }
-        public void VerificarSalario() { }
-        public void CargaHoraria () { }
+        public void VerificarSalario()
+        {
+            Console.WriteLine("digite sua profissao para verificar salario");
+            Console.WriteLine("1 - Gerente.");
+            Console.WriteLine("2 - Caixa.");
+            int acaoselecionada = int.Parse(Console.ReadLine());
+
+            if (acaoselecionada ==1)
+            {
+                Console.WriteLine("Digite o seu id");
+                int id = int.Parse(Console.ReadLine());
+                BuscarGerentePorId(id);
+                fun.ExibirDetalhesFuncionarios();
+
+
+            }
+            else if (acaoselecionada== 2) 
+            {
+                Console.WriteLine("Digite o seu id");
+                int id = int.Parse(Console.ReadLine());
+                BuscarCaixaPorId(id);
+                funG.ExibirDetalhesFuncionarios();
+            }
+
+        }
+        public void CargaHoraria() { }
         public void HistoricoDeVendas() { }
 
         public void ListaCaixa()
@@ -152,29 +176,29 @@ namespace Atividade_Loja
                 }
             }
 
-        } 
+        }
         public Gerente BuscarGerentePorId(int id)
+        {
+            foreach (Gerente ger in gerentes)
             {
-                foreach (Gerente ger in gerentes)
+                if (ger.Id == id)
                 {
-                    if (ger.Id == id)
-                    {
-                        return ger;
-                    }
+                    return ger;
                 }
-                return null;
             }
-             public Caixa BuscarCaixaPorId(int id)
+            return null;
+        }
+        public Caixa BuscarCaixaPorId(int id)
+        {
+            foreach (Caixa cax in caixas)
             {
-                foreach (Caixa cax in caixas)
+                if (cax.Id == id)
                 {
-                    if (cax.Id == id)
-                    {
-                        return cax;
-                    }
+                    return cax;
                 }
-                return null;
             }
+            return null;
+        }
         public static Caixa CriarCaixa()
         {
             Console.WriteLine("Qual nome do funcionário?");
@@ -202,7 +226,30 @@ namespace Atividade_Loja
 
             return gerente;
         }
-        
+        public void removerfuncionarios(int profissaoSelecionada, int IdFuncionario)
+        {
+            if (profissaoSelecionada == 1)
+            {
+                Gerente ger = BuscarGerentePorId(IdFuncionario);
+                RemoverGerente(ger);
+            }
+            else if (profissaoSelecionada == 2)
+            {
+                Caixa cax = BuscarCaixaPorId(IdFuncionario);
+                RemoverCaixa(cax);
+            }
+
+        }
+        public void RemoverCaixa(Caixa caixa)
+        {
+            caixas.Remove(caixa);
+        }
+        public void RemoverGerente(Gerente gerente)
+        {
+            gerentes.Remove(gerente);
+        }
+
+
     }
 
 }

@@ -8,6 +8,13 @@ namespace Atividade_Loja
 {
     public class Caixa
     {
+        private GerenciadorFuncionario fun { get; set; }
+
+        public Caixa()
+        {
+            fun = new GerenciadorFuncionario();
+        }
+
         public int Id { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set; }

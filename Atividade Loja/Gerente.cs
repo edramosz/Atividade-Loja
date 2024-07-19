@@ -8,6 +8,13 @@ namespace Atividade_Loja
 {
     public class Gerente
     {
+        private GerenciadorFuncionario funG { get; set; }
+
+        public Gerente()
+        {
+            funG = new GerenciadorFuncionario();
+        }
+
         public int Id { get; set; }
         public string Nome { get; set; }
         public int Idade { get; set; }
@@ -55,7 +62,7 @@ namespace Atividade_Loja
         }
         public void AumentarSalario()
         {
-            Salario = Salario + (Salario * 0.1);
+            Salario = Salario + (Salario * 0.3);
         }
 
     }

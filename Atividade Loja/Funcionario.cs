@@ -73,10 +73,10 @@ namespace Atividade_Loja
                     Console.WriteLine("\n\n");
                     break;
 
-            //    case 5:
-            //        VerificarSalario();
-            //        Console.WriteLine("\n\n");
-            //        break;
+               case 5:
+                    funcionarios.VerificarSalario();
+                    Console.WriteLine("\n\n");
+                    break;
 
             //    case 6:
             //        CargaHoraria();

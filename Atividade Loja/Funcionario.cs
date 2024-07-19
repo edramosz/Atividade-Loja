@@ -11,11 +11,13 @@ namespace Atividade_Loja
     {
     
         List<Funcionario> funcionarios = new List<Funcionario>();
-        private GerenciadorFuncionario funcionarios { get; set; }
+        private GerenciadorFuncionario GerFuncionario { get; set; }
+        private Estoque estq { get; set; }
 
         public Funcionario()
         {
-           funcionarios = new GerenciadorFuncionario();
+           GerFuncionario = new GerenciadorFuncionario();
+            estq= new Estoque();
         }
 
 
@@ -48,7 +50,7 @@ namespace Atividade_Loja
 
         public void ExibirMenuFuncionario()
         {
-            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Listar Funcionário." + "\n2 - Adicionar Funcionário." + "\n3 - Remover Funcionário." + "\n4 - Editar Funcionário." + "\n5 - Verificar Salário." + "\n6 - Carga Horária." + "\n7 - Histórico de Vendas." + "");
+            Console.WriteLine("Você deseja fazer qual das seguintes opções?" + "\n0 - Fechar o Sistema." + "\n1 - Listar Funcionário." + "\n2 - Adicionar Funcionário." + "\n3 - Remover Funcionário." + "\n4 - Editar Funcionário." + "\n5 - Verificar Salário." + "\n6 - Carga Horária." + "\n7 - Adicionar produtos." + "\n8 - Excluir produtos." + "\n9 - Editar produtos." + "\n10 - Histórico de Vendas.");
             
         }
         private void RealizarAcaoSelecionada(int acaoSelecionada)
@@ -56,39 +58,60 @@ namespace Atividade_Loja
             switch (acaoSelecionada)
             {
                case 1:
-                    funcionarios.ListarFuncionarios();
+                    GerFuncionario.ListarFuncionarios();
                     Console.WriteLine("\n\n");
                     break;
 
                 case 2:
-                    funcionarios.AdicionarFuncionario();
+                    GerFuncionario.AdicionarFuncionario();
                     Console.WriteLine("\n\n");
                     break;
 
                  case 3:
-                    funcionarios.RemoverFuncionario();
+                    GerFuncionario.RemoverFuncionario();
                     Console.WriteLine("\n\n");
                     break;
 
                case 4:
-                    funcionarios.EditarFuncionario();
+                    GerFuncionario.EditarFuncionario();
                     Console.WriteLine("\n\n");
                     break;
 
-            //    case 5:
-            //        VerificarSalario();
-            //        Console.WriteLine("\n\n");
-            //        break;
+                case 5:
+                    GerFuncionario.VerificarSalario();
+                    Console.WriteLine("\n\n");
+                    break;
 
-            //    case 6:
-            //        CargaHoraria();
-            //        Console.WriteLine("\n\n");
-            //        break;
+                case 6:
+                    GerFuncionario.CargaHoraria();
+                    Console.WriteLine("\n\n");
+                    break;
 
-            //    case 7:
-            //        HistoricoVenda();
-            //        Console.WriteLine("\n\n");
-            //        break;
+                case 7:
+                    Console.WriteLine("Qual o tipo de produto?");
+                    Console.WriteLine("1 - Físico    2 - Digital");
+                    int resposta = int.Parse(Console.ReadLine());
+                    if(resposta == 1)
+                    {
+                        estq.AdicionarProdutoFisico();
+                        Console.WriteLine("\n\n");
+                    }
+                    else if(resposta == 2)
+                    {
+                        estq.AdicionarProdutoDigital();
+                        Console.WriteLine("\n\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Número inválido.");
+                        RealizarAcaoSelecionada(7);
+                    }
+                    break;
+
+                    //     case 7:
+                    //        estq.Adicionar();
+                    //        Console.WriteLine("\n\n");
+                    //        break;
             }
         }
 

@@ -9,9 +9,16 @@ namespace Atividade_Loja
     public class GerenciadorCliente
     {
         public Estoque estq { get; set; }
+        public Usuario user { get; set; }
+
+        public GerenciadorCliente() 
+        { 
+            estq = new Estoque();
+            user = new Usuario(0, string.Empty, 0);
+        }
         public void ListarClientes()
         {
-            
+            user.MostrarDetalhes();
         }
         public void AdicionarCliente()
         {
@@ -32,10 +39,10 @@ namespace Atividade_Loja
             switch (acao)
             {
                 case 1:
-                estq.ListarProdutosD();
-                estq.ListarProdutosF();
-
+                    estq.ListarProdutosD();
+                    estq.ListarProdutosF();
                     break;
+
                 case 2:
                     estq.ListarProdutosD();
                     break;

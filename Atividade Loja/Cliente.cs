@@ -8,6 +8,12 @@ namespace Atividade_Loja
 {
     public class Cliente
     {
+        public GerenciadorCliente gC { get; set; }
+
+        public Cliente() 
+        { 
+            gC = new GerenciadorCliente();
+        }
         public void IniciarMenuCliente()
         {
             //erro aqui abaixo por conta da falta de ação dentro do menu funcionário.
@@ -43,35 +49,35 @@ namespace Atividade_Loja
         {
             switch (acaoSelecionada)
             {
-               // case 1:
-               //     ListarClientes();
-               //     Console.WriteLine("\n\n");
-               //     break;
+                case 1:
+                    //listarclientes();
+                    //console.writeline("\n\n");
+                    break;
 
-               //case 2:
-               //     AdicionarClientes();
-               //     Console.WriteLine("\n\n");
-               //     break;
+                case 2:
+                    //adicionarclientes();
+                    //console.writeline("\n\n");
+                    break;
 
-               // case 3:
-               //     RemoverCliente();
-               //     Console.WriteLine("\n\n");
-               //     break;
+                case 3:
+                    //removercliente();
+                    //console.writeline("\n\n");
+                    break;
 
-               // case 4:
-               //     Editar();
-               //     Console.WriteLine("\n\n");
-               //     break;
+                case 4:
+                    //editar();
+                    //console.writeline("\n\n");
+                    break;
 
-               // case 5:
-               //     VerProdutos();
-               //     Console.WriteLine("\n\n");
-               //     break;
+                case 5:
+                    gC.MostrarProdutos();
+                    //console.writeline("\n\n");
+                    break;
 
-               // case 6:
-               //     HistoricoCompra();
-               //     Console.WriteLine("\n\n");
-               //     break;
+                case 6:
+                    //historicocompra();
+                   // console.writeline("\n\n");
+                    break;
             }
         }
 

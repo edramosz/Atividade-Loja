@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Atividade_Loja
 {
-    public class Compra
+    public class Compra : Estoque
     {
+        
+        public GerenciadorCliente gc { get; set; }
+
+        public Compra()
+        {
+            //carrinho = new List<Compra>();
+            gc = new GerenciadorCliente();
+        }
+       
     }
 }

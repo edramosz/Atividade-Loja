@@ -8,10 +8,13 @@ namespace Atividade_Loja
 {
     public class Cliente
     {
+        public Estoque estq { get; set; }
         public GerenciadorCliente gC { get; set; }
+        public Compra cp { get; set; }
 
         public Cliente() 
         { 
+            estq = new Estoque();
             gC = new GerenciadorCliente();
         }
         public void IniciarMenuCliente()
@@ -70,7 +73,7 @@ namespace Atividade_Loja
                     break;
 
                 case 5:
-                    gC.MostrarProdutos();
+                    estq.MostrarProdutos();
                     //console.writeline("\n\n");
                     break;
 
@@ -78,6 +81,10 @@ namespace Atividade_Loja
                     //historicocompra();
                    // console.writeline("\n\n");
                     break;
+
+                //case 7:
+                    //cp.compra();
+                    //break;
             }
         }
 

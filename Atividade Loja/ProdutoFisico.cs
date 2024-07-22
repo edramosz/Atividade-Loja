@@ -14,6 +14,6 @@ namespace Atividade_Loja
             Nome = nome;
             Preço = preço;
             Qtnd = qtnd;
-        }
+        }     
     }
 }

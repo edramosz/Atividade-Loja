@@ -10,6 +10,7 @@ namespace Atividade_Loja
     {
         List<ProdutoFisico> ProdutosF { get; set; } = new List<ProdutoFisico>();
         List<ProdutoDigital> ProdutosD { get; set; } = new List<ProdutoDigital>();
+        List<Produto> carrinho { get; set; } = new List<Produto> { };
         public int TipoProduto { get; set; }
         public Estoque()
         {
@@ -23,20 +24,15 @@ namespace Atividade_Loja
             ProdutosF.Add(new ProdutoFisico(3, "Teclado Redragon", 98.69, 90));
             ProdutosF.Add(new ProdutoFisico(4, "Fonte de Alimentação 550W", 420.50, 63));
             ProdutosF.Add(new ProdutoFisico(5, "Water Cooler ", 199.99, 260));
-            ProdutosF.Add(new ProdutoFisico(6, "", 309.20, 104));
-            ProdutosF.Add(new ProdutoFisico(7, "", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(8, "", 17.20, 52));
-            ProdutosF.Add(new ProdutoFisico(9, "", 17.20, 52));
+            ProdutosF.Add(new ProdutoFisico(6, "Processador ryzen7", 1009.20, 104));
         }
         public void InicializarDadosDigital()
         {
             ProdutosD.Add(new ProdutoDigital(1, "Youtoba", 17.20, 52));
-            ProdutosD.Add(new ProdutoDigital(2, "", 17.20, 52));
             ProdutosD.Add(new ProdutoDigital(3, "Whatsapp 2", 17.20, 52));
             ProdutosD.Add(new ProdutoDigital(4, "Netuflixo", 17.20, 52));
             ProdutosD.Add(new ProdutoDigital(5, "Jogo Payfire Mídia Digital", 17.20, 52));
-            ProdutosD.Add(new ProdutoDigital(6, "", 17.20, 52));
-            ProdutosD.Add(new ProdutoDigital(7, "", 17.20, 52));
+
         }
        
 
@@ -175,6 +171,35 @@ namespace Atividade_Loja
             foreach (ProdutoDigital pd in ProdutosD)
             {
                 Console.WriteLine($"{pd.ID} {pd.Nome} {pd.Qtnd} ---  ${pd.Preço}");
+            }
+        }
+        public void compraF()
+        {
+            Console.WriteLine("Quer adicionar qual produto para o carrinho pelo seu id?");
+            int id = int.Parse(Console.ReadLine());
+            foreach (ProdutoFisico e in ProdutosF)
+            {
+                carrinho.Add(e);
+            }
+            foreach (Produto f in carrinho)
+                Console.WriteLine(f.Nome);
+            Console.WriteLine("Deseja adicionar mais algum?");
+        }
+
+        public void MostrarProdutos()
+        {
+            Console.WriteLine("1 - Deseja ver produtos só fisicos? \n" + "2 - Deseja ver só produtos digitais?\n");
+            int acao = int.Parse(Console.ReadLine());
+            if (acao == 1)
+            {
+                ListarProdutosF();
+                compraF();
+
+            }
+
+            else if (acao == 2)
+            {
+                ListarProdutosD();
             }
         }
 
